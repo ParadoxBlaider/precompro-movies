@@ -1,0 +1,29 @@
+footer{
+    padding: 40px;
+    .footer__container{
+        img{
+            cursor: pointer;
+        }
+        width: 33.3%;
+        &:nth-child(1){
+            text-align-last: left;
+            img{
+                width: 60px;
+            }
+        }
+        &:nth-child(2){
+            place-content: center;
+            img{
+                width: 20px;
+                &:not(:last-child){
+                    margin-right: 50px;
+                }
+            }
+        }
+        &:nth-child(3){
+            text-align: right;
+            color: rgb(212, 212, 212);
+            font-weight: bold;
+        }
+    }
+}

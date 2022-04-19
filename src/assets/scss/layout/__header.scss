@@ -1,0 +1,85 @@
+@use '../colors/__variables' as v;
+nav {
+    height: 50%;
+    font-weight: bold;
+
+    .navbar_links{
+        margin-top: 35px;
+        position: absolute;
+        display: flex;
+        top: 0;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        color: v.$blank;
+        justify-content: center;
+        a{
+            margin: 10px 15px;
+            color: v.$blank;
+        }
+        a.router-link-exact-active {
+            color: v.$color-active;
+        }
+    }
+    .catalog_options{
+        margin: 0;
+        position: relative;
+        display: flex;
+        font-size: 15px;
+        padding-left: 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.182);
+        a:not(:last-child){
+            margin-right: 50px;
+        }
+        a{
+            color: gray;
+            padding: 25px 0;
+        }
+        a.router-link-exact-active {
+            color: v.$color-active;
+            border-bottom: 2px solid v.$color-active;
+        }
+        .box_favorite{
+            align-self: center;
+            position: absolute;
+            right: 0;
+            div{
+                color: v.$blank;
+                padding: 8px 26px;
+                background-color: v.$color-active;
+                cursor: pointer;
+            }
+        }
+    }
+}
+a{
+    border-style: none;
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+.carousel{
+    overflow: hidden;
+    img{
+        width: 100%;
+    }
+}
+.logo{
+    position: relative;
+    width: 98%;
+    margin: 0 auto;
+    img{
+        position: absolute;
+        height: 87px;
+        left: 0;
+    }
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+input{
+    border: 0;
+}
