@@ -1,10 +1,10 @@
 <template>
   <nav>
       <div class="logo">
-          <img src="../assets/imgs/imbd.png" alt="">
+          <img src="@/assets/imgs/imbd.png" alt="">
       </div>
       <div class="carousel">
-          <img src="../assets/imgs/banner_1.jpg" alt="">
+          <img src="@/assets/imgs/banner_1.jpg" alt="">
       </div>
       <NavBar :titles="titles" classes="navbar_links"/>
       <div class="img_profile">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
+import NavBar from '@/components/header/NavBar.vue'
 
 export default {
     components:{

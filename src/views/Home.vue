@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Container from '@/components/Container.vue'
+import Container from '@/components/global/Container.vue'
 
 export default {
   name: 'Home',

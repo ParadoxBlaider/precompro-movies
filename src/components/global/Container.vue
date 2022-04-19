@@ -3,10 +3,10 @@
         <NavBar :titles="titles" classes="catalog_options" :favorites="true"/>
         <div class="filters">
             <div>
-                <img class="filters_icon" src="../assets/icons/hamburguer_Ai.svg" alt="" srcset="">
+                <img class="filters_icon" src="@/assets/icons/hamburguer_Ai.svg" alt="" srcset="">
             </div>
              <div>
-                <img class="filters_icon" src="../assets/icons/points_Ai.svg" alt="" srcset="">
+                <img class="filters_icon" src="@/assets/icons/points_Ai.svg" alt="" srcset="">
             </div>
              <div class="d-inline-g text-left filters_container_rating">
                 <label for="rating_imdb" class="font-13 font-w-b">iMDb Rating</label>
@@ -18,7 +18,7 @@
             </div>
             <div class="d-flex filters_container_search">
                 <input type="text" class="" v-model="keyword" @keyup="filterByKeyWord(keyword)">
-                <img class="filters_icon" src="../assets/icons/search_Ai.svg" alt="" srcset="">
+                <img class="filters_icon" src="@/assets/icons/search_Ai.svg" alt="" srcset="">
             </div>
         </div>
         <div class="d-flex container_catalog__movies">
@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
-import Card from '@/components/Card.vue'
+import NavBar from '@/components/header/NavBar.vue'
+import Card from '@/components/global/atoms/Card.vue'
 import {mapState,mapActions} from 'vuex'
 
 

@@ -6,9 +6,9 @@
 
 </template>
 <script>
-  import Header from '@/components/Header.vue'
-  import Footer from '@/components/Footer.vue'
-  import Modal from '@/components/Modal.vue'
+  import Header from '@/components/header/Header.vue'
+  import Footer from '@/components/footer/Footer.vue'
+  import Modal from '@/components/global/atoms/Modal.vue'
   import './assets/scss/colors/__variables.scss'
   import {mapActions} from 'vuex'
   export default {
@@ -24,7 +24,7 @@
     created(){
       this.loadMovies();
     }
-  } 
+  }
 </script>
 
 

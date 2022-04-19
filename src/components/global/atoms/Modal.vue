@@ -25,7 +25,7 @@
                     <div class="d-flex card_movie__info_modal_description__detail__achievements">
                         <div class="card_movie__info_modal_description__detail__achievements__container">
                         <div class="d-flex">
-                            <img src="../assets/icons/hearth_Ai.svg" alt="">
+                            <img src="@/assets/icons/hearth_Ai.svg" alt="">
                             <div>
                                 {{movie.vote_average}}
                             </div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="card_movie__info_modal_description__detail__achievements__container">
                         <div class="d-flex">
-                            <img src="../assets/icons/dislike_Ai.svg" alt="">
+                            <img src="@/assets/icons/dislike_Ai.svg" alt="">
                             <div>
                                 {{movie.vote_count}}
                             </div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="card_movie__info_modal_description__detail__achievements__container">
                         <div class="d-flex">
-                            <img src="../assets/icons/trophy_Ai.svg" alt="">
+                            <img src="@/assets/icons/trophy_Ai.svg" alt="">
                             <div>
                                 -
                             </div>
