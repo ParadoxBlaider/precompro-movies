@@ -5,6 +5,10 @@ export default createStore({
     movies:[],
     range:0,
     range_actived:false,
+    modal:false,
+    movie:null,
+    url_movies: 'https://image.tmdb.org/t/p/original/',
+    class_animation:'width: 62px'
   },
   mutations: {
     load(state,payload){
@@ -17,6 +21,38 @@ export default createStore({
     },
     filterKey(state,payload){
       state.movies = payload
+    },
+    open(state,payload){
+      state.movie = payload
+      state.modal = true
+      // esperar a que se abra modal para hacer animación 3d del elemento que se requiere
+      setTimeout(() => {
+          state.class_animation = 'width: 280px;'
+          const card = document.querySelector("#container_3d");
+          const height = card.clientHeight
+          const width = card.clientWidth
+          const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
+          function handleHover(e) {
+            const { clientX, clientY } = e;
+            const yRotation = (20 * ((clientX - width / 2) / width)).toFixed(2)
+            const xRotation = (-20 * ((clientY - height / 2) / height)).toFixed(2)
+            card.style.transform = `perspective(500px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale3d(1, 1, 1)`;
+          }
+          function resetStyles(e) {
+            card.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
+          }
+          if (!motionMatchMedia.matches) {
+            card.addEventListener("mousemove", handleHover);
+            card.addEventListener("mouseleave", resetStyles);
+          }
+      }, 600);
+    },
+    close(state){
+      state.modal = false
+      setTimeout(() => {
+        state.class_animation = 'width: 62px;'
+        console.log(state.class_animation)
+    }, 600);
     }
   },
   actions: {
@@ -49,6 +85,14 @@ export default createStore({
         return item.title.toLowerCase().includes(keyword.toLowerCase())
       })
       commit('filterKey',moviesFiltered)
+    },
+    async openModal({commit},id){
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=788725be04826f26be991b7a88462b46`);
+      const dataMovieDetail = await res.json();
+      commit('open',dataMovieDetail)
+    },
+    closeModal({commit}){
+      commit('close')
     }
   },
   modules: {

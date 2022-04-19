@@ -1,6 +1,6 @@
 <template>
   <article class="card_movie" @click="openModal">
-      <img :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" alt="">
+      <img :src="`${url_movies}${movie.poster_path}`" alt="">
       <div class="card_movie__info">
             <h2 class="">{{movie.title.toUpperCase()}}</h2>
             <h3 class="text_color_imdb mt-2">
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 export default {
     data() {
         return {
@@ -44,6 +46,9 @@ export default {
         },
        
         
+    },
+    computed:{
+        ...mapState(['url_movies'])
     },
     created(){
         this.getGenre()

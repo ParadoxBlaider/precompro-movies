@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="d-flex container_catalog__movies">
-            <Card v-for="(movie) in movies" :key="movie.id" :movie="movie"/>
+            <Card v-for="(movie) in movies" :key="movie.id" :movie="movie" @click="openModal(movie.id)"/>
         </div>
         
   </div>
@@ -72,7 +72,7 @@ export default {
         }
     },
     methods:{
-        ...mapActions(['filterMoviesByRate','filterByKeyWord']),
+        ...mapActions(['filterMoviesByRate','filterByKeyWord','openModal']),
         positionGlobeRating(){
            
             let inputRating = document.querySelector('#rating_imdb');
@@ -101,9 +101,6 @@ export default {
                 this.style.background = 'linear-gradient(to right, #e9e211 0%, #e9e211 ' + value + '%, rgba(128, 128, 128, 0.182) ' + value + '%, rgba(128, 128, 128, 0.182) 100%)'
             };
         },
-        openModal(){
-            alert('robejto es gay')
-        }
     },
     computed:{
         ...mapState(['movies']),
