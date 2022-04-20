@@ -29,6 +29,7 @@ export default createStore({
       setTimeout(() => {
           state.class_animation = 'width: 280px;'
           const card = document.querySelector("#container_3d");
+          const element = document.querySelector(".card_movie__info_modal");
           const height = card.clientHeight
           const width = card.clientWidth
           const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
@@ -44,6 +45,15 @@ export default createStore({
           if (!motionMatchMedia.matches) {
             card.addEventListener("mousemove", handleHover);
             card.addEventListener("mouseleave", resetStyles);
+            card.addEventListener("click", (event) =>{
+              const withinBoundaries = event.composedPath().includes(element)
+              if (!withinBoundaries) {
+                state.modal = false
+                setTimeout(() => {
+                  state.class_animation = 'width: 62px;'
+                }, 300);
+              }
+            });
           }
       }, 600);
     },
@@ -51,8 +61,7 @@ export default createStore({
       state.modal = false
       setTimeout(() => {
         state.class_animation = 'width: 62px;'
-        console.log(state.class_animation)
-    }, 600);
+      }, 300);
     }
   },
   actions: {

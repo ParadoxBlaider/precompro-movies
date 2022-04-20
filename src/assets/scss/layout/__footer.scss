@@ -27,3 +27,15 @@ footer{
         }
     }
 }
+@media screen and (max-width: 576px){
+    footer{
+        display: inherit!important;
+        div{
+            text-align-last: center!important;
+            padding-bottom: 10px;
+        }
+        .footer__container{
+            width: 100%;
+        }
+    }
+  }

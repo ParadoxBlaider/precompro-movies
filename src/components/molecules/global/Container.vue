@@ -2,13 +2,15 @@
   <div class="container_catalog" >
         <NavBar :titles="titles" classes="catalog_options" :favorites="true"/>
         <div class="filters">
-            <div>
-                <img class="filters_icon" src="@/assets/icons/hamburguer_Ai.svg" alt="" srcset="">
+            <div class="d-flex filters__container_icons">
+                <div>
+                    <img class="filters__icon" src="@/assets/icons/hamburguer_Ai.svg" alt="" srcset="">
+                </div>
+                <div>
+                    <img class="filters__icon" src="@/assets/icons/points_Ai.svg" alt="" srcset="">
+                </div>
             </div>
-             <div>
-                <img class="filters_icon" src="@/assets/icons/points_Ai.svg" alt="" srcset="">
-            </div>
-             <div class="d-inline-g text-left filters_container_rating">
+             <div class="d-inline-g text-left filters__container_rating">
                 <label for="rating_imdb" class="font-13 font-w-b">iMDb Rating</label>
                 <div class="position-relative">
                     <div class="globe_range">{{range}} </div>
@@ -16,11 +18,12 @@
                 </div>
                 
             </div>
-            <div class="d-flex filters_container_search">
+            <div class="d-flex filters__container_search">
                 <input type="text" class="" v-model="keyword" @keyup="filterByKeyWord(keyword)">
-                <img class="filters_icon" src="@/assets/icons/search_Ai.svg" alt="" srcset="">
+                <img class="filters__icon" src="@/assets/icons/search_Ai.svg" alt="" srcset="">
             </div>
         </div>
+
         <div class="d-flex container_catalog__movies">
             <Card v-for="(movie) in movies" :key="movie.id" :movie="movie" @click="openModal(movie.id)"/>
         </div>
@@ -133,13 +136,13 @@ export default {
                 align-items: center;
                 display: flex;
                 padding: 30px 0;
-                .filters_icon{
+                &__icon{
                     width: 25px;
                 }
                 div:not(:last-child){
                     margin-right: 17px;
                 }
-                .filters_container_rating{
+                &__container_rating{
                     width: 60%;
                     div{
                         position: relative;
@@ -173,9 +176,9 @@ export default {
                         }
                     }
                 }
-                .filters_container_search{
+                &__container_search{
                     width: 30%;
-                    border-bottom: 3px solid #e8e8e8;
+                    border-bottom: 2px solid #e8e8e8;
                     margin-bottom: -3px;
                     input{
                         width:100%;
@@ -217,6 +220,49 @@ export default {
                 display: -ms-flexbox;
                 margin-right: -10px;
                 margin-left: -10px;
+            }
+        }
+    }
+    @media screen and (min-width: 1360px) {
+    }
+    @media screen and (min-width: 1200px) and (max-width: 1360px){
+    }
+    @media screen and (min-width: 992px) and (max-width: 1200px){
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px){
+    }
+    @media screen and (min-width: 576px) and (max-width: 768px){
+    }
+    @media screen and (max-width: 576px) {
+        
+    }
+    @media screen and (max-width: 400px) {
+         .home{
+            .container_catalog{ 
+                width: 70%;
+                padding: 0px 40px;
+            }
+        }
+    }
+    @media screen and (max-width: 768px){
+        .home{
+            .container_catalog{
+                .filters{
+                    display: block;
+                    &__container_icons{
+                        justify-content: center;
+                    }
+                    &__container_rating{
+                        width: 100%;
+                    }
+                    &__container_search{
+                        width: 100%;
+                        margin-top: 5px;
+                        input{
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
     }

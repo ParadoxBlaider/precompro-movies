@@ -1,8 +1,49 @@
 @use '../colors/__variables' as v;
 nav {
+    .menu_hamburguer{
+        
+        &__container_icon{
+            width: 30px;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            cursor: pointer;
+            img{
+                width: 100%;
+            }
+            z-index: 4;
+        }
+        &__container{
+            transition: 2s all;
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 3;
+        }
+    }
     height: 50%;
     font-weight: bold;
-
+    .img_profile{
+        width: 98%;
+        div{
+            width: 45px;
+            height: 45px;
+            background: red;
+            position: absolute;
+            right: 20px;
+            top: 25px;
+            border-radius: 50%;
+            img{
+                width: 100%;
+                border-radius: 50%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
     .navbar_links{
         margin-top: 35px;
         position: absolute;
@@ -31,11 +72,13 @@ nav {
         padding-left: 0;
         border-bottom: 1px solid rgba(128, 128, 128, 0.182);
         flex-flow: wrap;
+        padding-right: 110px;
         a:not(:last-child){
             margin-right: 50px;
         }
         a{
             color: gray;
+            align-self: center;
             padding: 25px 0;
         }
         a.router-link-exact-active {
@@ -64,6 +107,9 @@ ul,ol{
 }
 .carousel{
     overflow: hidden;
+    .splide{
+        padding: 0;
+    }
     img{
         width: 100%;
     }
@@ -76,6 +122,7 @@ ul,ol{
         position: absolute;
         height: 87px;
         left: 0;
+        z-index: 1;
     }
 }
 textarea:focus, input:focus{
@@ -84,3 +131,72 @@ textarea:focus, input:focus{
 input{
     border: 0;
 }
+
+@media screen and (max-width: 992px){
+    nav {
+        .catalog_options{
+            flex-flow: initial;
+            overflow: auto;
+            padding-bottom: 5px;
+            padding-right: 0;
+            .box_favorite{
+                position: relative;
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    nav {
+        .menu_hamburguer{
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 576px) and (max-width: 768px){
+   
+}
+@media screen and (max-width: 768px){
+    nav {
+        .catalog_options{
+            font-size: 12px;
+        }
+        .logo{
+            img{
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+        .navbar_links{
+            display: none;
+        }
+        .navbar_links.menu_hamburguer__container__options{
+            display: inline-grid;
+            position: relative;
+            padding: 0;
+            margin-top: 50px;
+            
+            a{
+                color: gray;
+            }
+            a.router-link-exact-active {
+                color: v.$color-active;
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px){
+    nav {
+        .logo{
+            img{
+                height: 60px;
+            }
+        }
+        .img_profile{
+            div{
+                top: 15px;
+            }
+        }
+    }
+}
+

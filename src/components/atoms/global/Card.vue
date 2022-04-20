@@ -128,5 +128,86 @@ export default {
             }
         }
     }
-
+    @media screen and (min-width: 1360px) {
+        .box_movie{
+           width: 25%;
+            .card_movie{
+                &__container_img{
+                    height: 400px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) and (max-width: 1360px){
+       .box_movie{
+           width: 33.3%;
+           .card_movie{
+                &__container_img{
+                    height: 400px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1200px){
+        .box_movie{
+            width: 50%;
+            .card_movie{
+                &__container_img{
+                    height: 550px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px){
+        .box_movie{
+            width: 50%;
+           .card_movie{
+                &__container_img{
+                    height: 450px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 768px){
+        .box_movie{
+            width: 100%;
+        }
+        .card_movie__modal_bg {
+            .card_movie__info_modal {
+                height: 440px;
+                box-sizing: border-box;
+                .card_movie__info_modal_description {
+                    position: absolute;
+                    max-width: 415px;
+                    background: #ffffffc7;
+                    transform: scale(0.8);
+                    .card_movie__info_modal_description__detail {
+                        left: 7px;
+                    }
+                    .card_movie__info_modal__close_modal {
+                        color: #000000;
+                        cursor: pointer;
+                    }
+                }
+                .card_movie__info_modal__img{
+                    width: 280px;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 576px) and (max-width: 768px){
+        .box_movie{
+            width: 50%;
+            .card_movie{
+                &__container_img{
+                    height: 320px;
+                }
+            }
+        }
+    }
+  
 </style>

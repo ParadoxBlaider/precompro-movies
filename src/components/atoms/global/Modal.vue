@@ -101,6 +101,7 @@ import { mapActions, mapState } from 'vuex'
     }
     .card_movie__info_modal{
         height: 440px;
+        width: fit-content;
         position: fixed;
         margin: auto;
         left: 0;
@@ -112,7 +113,7 @@ import { mapActions, mapState } from 'vuex'
         overflow: hidden;
         place-content: center;
       
-      .card_movie__info_modal__img{
+      &__img{
         height: 100%;
         float: left;
         max-width: 280px;
@@ -122,7 +123,7 @@ import { mapActions, mapState } from 'vuex'
           height: 100%;
         }
       }
-      .card_movie__info_modal_description{
+      &_description{
         position: relative;
         width: 430px;
         background: #fff;
@@ -155,7 +156,7 @@ import { mapActions, mapState } from 'vuex'
             -webkit-box-orient: vertical;
             display: -webkit-box;
           }
-          .card_movie__info_modal_description__detail_2{
+          &_2{
             position: relative;
             border-bottom: 1px solid #f1f1f1;
             padding: 10px 0 15px 0;
@@ -206,7 +207,7 @@ import { mapActions, mapState } from 'vuex'
         }
         .card_movie__info_modal_description__resume{
           margin-top: 52%;
-          .card_movie__info_modal_description__resume__container{
+          &__container{
             padding: 15px;
             p{
                 height: 85px;
