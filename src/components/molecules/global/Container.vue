@@ -1,5 +1,5 @@
 <template>
-  <div class="container_catalog">
+  <div class="container_catalog" >
         <NavBar :titles="titles" classes="catalog_options" :favorites="true"/>
         <div class="filters">
             <div>
@@ -127,6 +127,8 @@ export default {
             margin: 0 auto;
             background: #f9fafb;
             transform: translateY(-60px);
+            margin-right: auto;
+            margin-left: auto;
             .filters{
                 align-items: center;
                 display: flex;
@@ -211,6 +213,10 @@ export default {
             }
             .container_catalog__movies{
                 flex-wrap: wrap;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                margin-right: -10px;
+                margin-left: -10px;
             }
         }
     }
