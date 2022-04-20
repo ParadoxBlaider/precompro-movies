@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import NavBar from '@/components/header/NavBar.vue'
+import NavBar from '@/components/molecules/header/NavBar.vue'
 
 export default {
     components:{

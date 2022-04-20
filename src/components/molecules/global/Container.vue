@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import NavBar from '@/components/header/NavBar.vue'
-import Card from '@/components/global/atoms/Card.vue'
+import NavBar from '@/components/molecules/header/NavBar.vue'
+import Card from '@/components/atoms/global/Card.vue'
 import {mapState,mapActions} from 'vuex'
 
 
