@@ -210,7 +210,6 @@ import { mapActions, mapState } from 'vuex'
           &__container{
             padding: 15px;
             p{
-                height: 85px;
                 overflow: hidden;
                 text-align: left;
                 font-size: 13px;
