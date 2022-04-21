@@ -89,7 +89,6 @@ export default createStore({
       }else{
           movies = await dispatch('apiMovies')
       }
-      console.log(movies)
       const moviesFiltered = movies.filter((item)=>{
         return item.title.toLowerCase().includes(keyword.toLowerCase())
       })
