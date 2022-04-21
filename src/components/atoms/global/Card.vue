@@ -176,6 +176,7 @@ export default {
             .card_movie__info_modal {
                 height: 440px;
                 box-sizing: border-box;
+                overflow: visible;
                 .card_movie__info_modal_description {
                     position: absolute;
                     max-width: 415px;
