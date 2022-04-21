@@ -34,7 +34,7 @@
                         </div>
                         <div class="card_movie__info_modal_description__detail__achievements__container">
                         <div class="d-flex">
-                            <img src="@/assets/icons/dislike_Ai.svg" alt="">
+                            <img src="@/assets/icons/dislike_Ai.svg" alt="" class="card_movie__info_modal_description__detail__achievements__container__img">
                             <div>
                                 {{new Intl.NumberFormat('es-CL', { currency: 'CLP' }).format(movie.vote_count) }}
                             </div>
@@ -186,6 +186,9 @@ import { mapActions, mapState } from 'vuex'
               display: grid;
               justify-items: center;
               font-weight: bold;
+              .card_movie__info_modal_description__detail__achievements__container__img{
+                transform: rotateX(180deg);
+              }
               &:not(:last-child){
                 margin-right: 3.5em;
               }
