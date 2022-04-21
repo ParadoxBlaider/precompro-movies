@@ -219,6 +219,7 @@ import { mapActions, mapState } from 'vuex'
                 -webkit-line-clamp: 5;
                 -webkit-box-orient: vertical;
                 display: -webkit-box;
+                height: 85px;
             }
             a{
               color: #00c4ff;
