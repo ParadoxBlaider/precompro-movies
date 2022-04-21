@@ -18,8 +18,8 @@
                             <span v-for="(genre,index) in movie.genres" :key="genre.id">{{ index ? genre.name : genre.name+', '}} </span>
                         </div>
                         <div class="d-flex font-13">
-                        <div>PG-13</div>
-                        <div>2h 3m</div>
+                        <div>PG-?</div>
+                        <div>?</div>
                         </div>
                     </div>
                     <div class="d-flex card_movie__info_modal_description__detail__achievements">
@@ -36,7 +36,7 @@
                         <div class="d-flex">
                             <img src="@/assets/icons/dislike_Ai.svg" alt="">
                             <div>
-                                {{movie.vote_count}}
+                                {{new Intl.NumberFormat('es-CL', { currency: 'CLP' }).format(movie.vote_count) }}
                             </div>
                         </div>
                         <label for="">Score</label>
