@@ -75,10 +75,15 @@ export default createStore({
       commit('load',data)
     },
     async filterMoviesByRate({commit,dispatch },range){
+      let moviesFiltered = null
       const movies = await dispatch('apiMovies')
-      const moviesFiltered = movies.filter((item)=>{
-        return  parseFloat(range) >= item.vote_average
-      })
+      if(range == 0){
+        moviesFiltered = movies
+      }else{
+        moviesFiltered = movies.filter((item)=>{
+          return  parseFloat(range) >= item.vote_average
+        })
+      }
       commit('filter',{moviesFiltered:moviesFiltered,range:range})
     },
     async filterByKeyWord({commit,dispatch},keyword){
